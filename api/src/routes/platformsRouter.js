@@ -4,7 +4,7 @@ const {API_KEY} = process.env;
 const axios = require("axios");
 const {Platform} =require("../db");
 
-(async function (){
+async function getPlatforms (){
     try {
         for (let i = 1; i<=2; i++){
             let response = await axios.get(`https://api.rawg.io/api/platforms?key=${API_KEY}&page=${i}`,{
@@ -21,13 +21,14 @@ const {Platform} =require("../db");
     } catch (error) {
         throw new Error (error.message)
     }
-})();
+};
 
 const platformsRouter = Router();
 
 platformsRouter.route("/")
 .get(async (req,res)=>{
     try {
+        // await getPlatforms();
         let response= await axios(`https://api.rawg.io/api/platforms/lists/parents?key=${API_KEY}`,{
             headers: { "Accept-Encoding": "gzip,deflate,compress" }
         });

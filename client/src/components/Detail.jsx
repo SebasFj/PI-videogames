@@ -15,6 +15,7 @@ const Container = styled.div`
     background-attachment: fixed;
     margin-top: 0px;
 `
+
 const DivContent = styled.div`
     padding-top: 50px;
     background-size: 100vh;

@@ -4,9 +4,6 @@ import styles from "./styles/navBar.css"
 
 
 export default function Navbar () {
-    const links = {
-        textDecoration:"none",
-    }
 
     const div = {
         height:"min-content",

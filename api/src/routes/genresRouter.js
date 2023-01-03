@@ -4,7 +4,7 @@ const {API_KEY} = process.env;
 const axios = require("axios");
 const {Videogame, Genre} =require("../db");
 
-(async function (){
+async function getGenres(){
     try {
         let response = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`,{
             headers: { "Accept-Encoding": "gzip,deflate,compress" }
@@ -19,13 +19,14 @@ const {Videogame, Genre} =require("../db");
     } catch (error) {
         throw new Error (error.message)
     }
-})();
+};
 
 const genresRouter = Router();
 
 genresRouter.route("/")
 .get(async (req,res)=>{
     try {
+        // await getGenres();
         let genres = await Genre.findAll();
         res.json(genres)
     } catch (error) {

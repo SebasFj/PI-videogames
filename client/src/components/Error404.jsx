@@ -3,12 +3,11 @@ import React from "react";
 
 const titles = {
     margin:"0px",
-    padding:"0px",
     color: "white",
     padding:"30px"
 }
 
-export default function () {
+export default function Error404() {
     return (
         <div style={{
             backgroundColor:"black",
