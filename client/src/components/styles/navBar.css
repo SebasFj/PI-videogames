@@ -1,0 +1,22 @@
+.active {
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+    border-style:double;
+    border-width: 5px;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.noActive {
+    color: white;
+    text-decoration: none; 
+    /* border-style:double; */
+    padding: 2px;
+}
+
+.noActive:hover{
+    background-color: rgba(128, 128, 128, 0.816);
+    border-style:double;
+    border-width: 5px;
+}
