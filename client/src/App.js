@@ -1,5 +1,5 @@
 import './App.css';
-import { Route} from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import Main from './components/Main';
 import Detail from './components/Detail';
 import Videogames from './components/Videogames';
@@ -14,7 +14,7 @@ function App() {
         <Route path={"/home/videogames/:id"} component={Detail}/> 
         <Route exact path={"/home"}><Videogames fav={false}/></Route>
         <Route path={"/create"} component={Form}/>
-        <Route path={"*"} component={Error404} />
+        {/* <Route component={Error404} /> */}
     </div>
   );
 }
