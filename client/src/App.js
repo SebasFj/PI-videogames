@@ -6,7 +6,6 @@ import Videogames from './components/Videogames';
 import Form from './components/Form';
 import Error404 from "./components/Error404"
 
-
 function App() {
   return (
     <div className="App">

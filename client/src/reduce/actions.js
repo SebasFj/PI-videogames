@@ -12,7 +12,7 @@ export const SET_HOME_INPUTS = "SET_HOME_INPUTS";
 export const UPDATE_SEARCH = "UPDATE_SEARCH";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 
-const host = "http://localhost:3001"
+const host = "https://pi-videogames-production-8b28.up.railway.app"
 
 
 export const getAllGames = () => {
