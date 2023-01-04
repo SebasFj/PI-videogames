@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createGame, getGenres, getPlatforms, setActivePlatform, setInitialInputs } from "../reduce/actions";
 import Navbar from "./Navbar";
 import styled from "styled-components";
+import { loading } from "./Videogames";
 
 const Container = styled.div`
     background-image: url("https://i.pinimg.com/474x/50/72/58/50725805536e1f3d8d20570ed22669ce.jpg");
@@ -150,9 +151,15 @@ export default function Form () {
                 <br/>
                 <div>
                     <h3>Select the genres</h3>
-                    {genres.map(genre=>(
-                    <button style={input.genres.includes(genre.id) ? activeButton : inactiveButton} key={genre.id} id={genre.id} name="genres" onClick={handleClick}>{genre.name}</button>
-                    ))}
+                    {
+                        genres[0]
+                    ? 
+                        genres.map(genre=>(
+                        <button style={input.genres.includes(genre.id) ? activeButton : inactiveButton} key={genre.id} id={genre.id} name="genres" onClick={handleClick}>{genre.name}</button>
+                        ))
+                    :
+                        loading
+                    }
                 </div>
                 <div>
                     <h3>Select parent platform</h3>

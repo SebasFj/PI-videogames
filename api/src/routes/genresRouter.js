@@ -26,8 +26,11 @@ const genresRouter = Router();
 genresRouter.route("/")
 .get(async (req,res)=>{
     try {
-        // await getGenres();
         let genres = await Genre.findAll();
+        if (!genres.length){
+            await getGenres();
+            genres = await Genre.findAll();
+        }
         res.json(genres)
     } catch (error) {
         res.status(400).json(error.message)

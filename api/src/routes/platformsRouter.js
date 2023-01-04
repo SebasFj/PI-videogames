@@ -28,7 +28,10 @@ const platformsRouter = Router();
 platformsRouter.route("/")
 .get(async (req,res)=>{
     try {
-        // await getPlatforms();
+        let platforms = await Platform.findAll();
+        if (!platforms.length){
+            await getPlatforms();
+        }
         let response= await axios(`https://api.rawg.io/api/platforms/lists/parents?key=${API_KEY}`,{
             headers: { "Accept-Encoding": "gzip,deflate,compress" }
         });
