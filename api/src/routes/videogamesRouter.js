@@ -52,7 +52,7 @@ videogamesRouter.route("/")
         databaseGames.forEach(game=>{idArray.push(game.id)})
         let newGame = await Videogame.create({
             id: id(idArray),
-            name,
+            name: name.toLowerCase(),
             description,
             released,
             rating,

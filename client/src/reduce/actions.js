@@ -13,6 +13,7 @@ export const UPDATE_SEARCH = "UPDATE_SEARCH";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 
 const host = "https://pi-videogames-production-8b28.up.railway.app"
+// const host = "http://localhost:3001"
 
 
 export const getAllGames = () => {
